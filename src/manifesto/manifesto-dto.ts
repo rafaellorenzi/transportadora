@@ -37,10 +37,10 @@ export class ManifestoDto {
 
     @IsNumberString()
     @IsNotEmpty()
-    valorFrete: number;
+    valorFrete: string;
 
     @IsNumberString()
     @IsNotEmpty()
-    valorValePedagio: number;
+    valorValePedagio: string;
     
 }

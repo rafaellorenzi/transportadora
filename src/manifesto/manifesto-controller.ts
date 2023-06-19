@@ -3,7 +3,7 @@ import { ManifestoService } from "./manifesto-service";
 import { ManifestoEntity } from "./manifesto-entity";
 import { ManifestoDto } from "./manifesto-dto";
 
-@Controller('motorista')
+@Controller('manifesto')
 export class ManifestoController {
     constructor(private manifestoService: ManifestoService){}
 

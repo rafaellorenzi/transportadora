@@ -53,10 +53,10 @@ export class ManifestoEntity{
       })
       motorista: MotoristaEntity;
 
-      @Column({type: 'number', name: 'valor_frete', nullable: true})
-      valorFrete: Number;
+      @Column()
+      valorFrete: string;
 
-     @Column({type: 'number', name: 'valor_valePedagio', nullable: true})
+     @Column()
       valorValePedagio: Number;
    
 }

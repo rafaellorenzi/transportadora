@@ -4,9 +4,9 @@ export const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
     database: 'transportadora',
     username: 'postgres',
-    password: 'postgres',
+    password: 'admin',
     port: 5432,
-    entities: ['dist/**/*.entity.js'],
+    entities: ['dist/**/*-entity.js'],
     migrations: ['dist/db/migrations/*.js']
 
 }
