@@ -1,5 +1,5 @@
 export enum CidadeEnum {
     Criciuma = 'criciuma',
-    Icara = 'Icara',
-    Morro_da_fumaca = 'Morro da Fumaça'
+    Icara = 'icara',
+    Morro_da_fumaca = 'morro da Fumaca'
 }
