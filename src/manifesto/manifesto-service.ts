@@ -2,8 +2,9 @@ import { Injectable } from "@nestjs/common/decorators";
 import { InjectRepository } from "@nestjs/typeorm";
 import { ManifestoEntity } from "./manifesto-entity";
 import { Repository } from "typeorm";
-import { NotFoundException } from "@nestjs/common";
+import { BadRequestException, NotFoundException } from "@nestjs/common";
 import { ManifestoDto } from "./manifesto-dto";
+import { MotoristaDto } from "src/motorista/motorista-dto";
 
 @Injectable ()
 export class ManifestoService {
@@ -40,4 +41,15 @@ export class ManifestoService {
         return this.manifestoRepository.save({ id, ...dto});
     }
 
+    validate(dto: ManifestoDto) {
+        if (dto.valorFrete = '') {
+          throw new BadRequestException('O valor do frete deve ser informado!');
+        }
+        if (new Date().getTime() < new Date(dto.dataChegada).getTime()) {
+            throw new BadRequestException('A data de chegada do Manifesto não pode ser menor que a data atual!');
+          }
+          if (new Date(dto.dataChegada).getTime() < new Date(dto.dataSaida).getTime()) {
+            throw new BadRequestException('A data de chegada do Manifesto não pode ser menor que a data de saída!');
+          }  
+    }
 }
